@@ -1,0 +1,10 @@
+---
+title: Discussion
+format: html
+---
+
+
+# This will be the quarto document we use to communicate with each other. 
+# We will write out methods, add in scripts, and output to compose a document as we work. 
+
+# Start Here
