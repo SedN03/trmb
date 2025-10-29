@@ -1,6 +1,9 @@
 ---
 title: Discussion
-format: html
+format: 
+    html:
+        toc: true
+        fontmain: "Georgia"
 ---
 
 
@@ -8,3 +11,17 @@ format: html
 # We will write out methods, add in scripts, and output to compose a document as we work. 
 
 # Start Here
+
+```{mermaid}
+graph TD; 
+    A[Kraken2] --> B[Braken2]
+    A[Kraken2] --> C[MeAPHis-q]
+    D[Centrifuge] --> C[MeAPHis-q]
+    E[Clark-S] --> C[MeAPHis-q]
+
+```
+
+[Kraken2](https://github.com/DerrickWood/kraken2)
+[Braken2](https://github.com/jenniferlu717/Bracken)
+[Centrifuge](https://github.com/DaehwanKimLab/centrifuge)
+[Clark (-S)](https://github.com/rouni001/CLARK)
