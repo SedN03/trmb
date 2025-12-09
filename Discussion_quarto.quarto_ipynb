@@ -1,0 +1,71 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: Discussion\n",
+        "format: \n",
+        "    html:\n",
+        "        toc: true\n",
+        "        fontmain: \"Georgia\"\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "# Methods\n",
+        "\n",
+        "## Alignment steps\n",
+        "\n",
+        "Using bowtie2 (v.2.5.4), we created an index genome of **T. repens.** and aligned sequences to the reference genome. We then used the --un-conc-gz function to create a file of unaligned sequence. This sequence file was converted to forward and reverse, and is our exogenous, non t.repens DNA.\n",
+        "\n",
+        "## Kraken2 Steps\n",
+        "\n",
+        "We build a kraken2 database of bacteria, fungi, viral, and achaean DNA.\n",
+        "\n",
+        "\n",
+        "```{bash}\n",
+        "kraken2-build --download-taxonomy --db KrakenDB\n",
+        "\n",
+        "kraken2-build --download-taxonomy bacteria --db KrakenDB\n",
+        "kraken2-build --download-taxonomy archaea --db KrakenDB\n",
+        "kraken2-build --download-taxonomy viral --db KrakenDB\n",
+        "kraken2-build --download-taxonomy fungi --db KrakenDB\n",
+        "kraken2-build --build --db KrakenDB\n",
+        "```\n",
+        "\n",
+        "```{mermaid}\n",
+        "graph TD; \n",
+        "    A[Kraken2] --> B[Braken2]\n",
+        "    A[Kraken2] --> C[MeAPHis-q]\n",
+        "    D[Centrifuge] --> C[MeAPHis-q]\n",
+        "    E[Clark-S] --> C[MeAPHis-q]\n",
+        "\n",
+        "```\n",
+        "\n",
+        "\n",
+        "[Kraken2](https://github.com/DerrickWood/kraken2)\n",
+        "[Braken2](https://github.com/jenniferlu717/Bracken)\n",
+        "[Centrifuge](https://github.com/DaehwanKimLab/centrifuge)\n",
+        "[Clark (-S)](https://github.com/rouni001/CLARK)\n",
+        "\n",
+        "# Development Forum\n",
+        "\n",
+        "## Kraken2\n",
+        "- first is that we will want to start using the k2 wrapper instead. It will be supported longer. \n",
+        "- next is that we'd want to use their 16S database alongside the bacteria, archaea, viral and fungal databases. We can test if using it alone or in combination works better, but that is available and we should use it. "
+      ],
+      "id": "7cfd58eb"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

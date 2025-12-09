@@ -6,9 +6,6 @@ format:
         fontmain: "Georgia"
 ---
 
-# This will be the quarto document we use to communicate with each other.
-
-# We will write out methods, add in scripts, and output to compose a document as we work.
 
 # Methods
 
@@ -29,7 +26,7 @@ kraken2-build --download-taxonomy viral --db KrakenDB
 kraken2-build --download-taxonomy fungi --db KrakenDB
 kraken2-build --build --db KrakenDB
 ```
-# Start Here
+
 
 ```{mermaid}
 graph TD; 
@@ -44,3 +41,9 @@ graph TD;
 [Braken2](https://github.com/jenniferlu717/Bracken)
 [Centrifuge](https://github.com/DaehwanKimLab/centrifuge)
 [Clark (-S)](https://github.com/rouni001/CLARK)
+
+# Development Forum
+
+## Kraken2
+- first is that we will want to start using the k2 wrapper instead. It will be supported longer. 
+- next is that we'd want to use their 16S database alongside the bacteria, archaea, viral and fungal databases. We can test if using it alone or in combination works better, but that is available and we should use it. 
