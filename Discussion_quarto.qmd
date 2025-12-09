@@ -6,10 +6,29 @@ format:
         fontmain: "Georgia"
 ---
 
+# This will be the quarto document we use to communicate with each other.
 
-# This will be the quarto document we use to communicate with each other. 
-# We will write out methods, add in scripts, and output to compose a document as we work. 
+# We will write out methods, add in scripts, and output to compose a document as we work.
 
+# Methods
+
+## Alignment steps
+
+Using bowtie2 (v.2.5.4), we created an index genome of **T. repens.** and aligned sequences to the reference genome. We then used the --un-conc-gz function to create a file of unaligned sequence. This sequence file was converted to forward and reverse, and is our exogenous, non t.repens DNA.
+
+## Kraken2 Steps
+
+We build a kraken2 database of bacteria, fungi, viral, and achaean DNA.
+
+```{bash}
+kraken2-build --download-taxonomy --db KrakenDB
+
+kraken2-build --download-taxonomy bacteria --db KrakenDB
+kraken2-build --download-taxonomy archaea --db KrakenDB
+kraken2-build --download-taxonomy viral --db KrakenDB
+kraken2-build --download-taxonomy fungi --db KrakenDB
+kraken2-build --build --db KrakenDB
+```
 # Start Here
 
 ```{mermaid}
